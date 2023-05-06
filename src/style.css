@@ -57,10 +57,11 @@ body {
   transform: translateY(1px);
 }
 
-textarea {
+/* textarea {
   width: 100%;
   max-width: 100%;
-}
+} */
+
 /* End shared utility & global classes */
 input {
   flex: 1;
