@@ -4,7 +4,7 @@ function App() {
       <form className="new-item-row">
         <label htmlFor="item">New item</label>
         <br></br>
-        <input id="item"></input>
+        <input type="text" id="item"></input>
         <button className="btn">Add</button>
       </form>
     </div>
