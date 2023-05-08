@@ -10,8 +10,10 @@ export default function App() {
       <h1>Todo list</h1>
       <ul>
         <li>
-          <input type="checkbox"></input>
-          <label>Item 1</label>
+          <label>
+            <input type="checkbox" />
+            Item 1
+          </label>
           <button className="btn btn-danger">Delete</button>
         </li>
       </ul>
