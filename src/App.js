@@ -2,11 +2,9 @@ export default function App() {
   return (
     <div>
       <form className="new-item-form">
-        <label>
-          New item
-          <br></br>
-          <input type="text"></input>
-        </label>
+        <label htmlFor="item">New item</label>
+        <br></br>
+        <input type="text" id="item"></input>
         <button className="btn">Add</button>
       </form>
       <h1>Todo list</h1>
