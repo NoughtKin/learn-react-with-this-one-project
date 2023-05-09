@@ -10,7 +10,7 @@ export default function App() {
     setTodo((currentTodo) => {
       return [
         ...currentTodo,
-        { id: crypto.randomUUID, completed: false, title: item },
+        { id: crypto.randomUUID(), completed: false, title: item },
       ];
     });
   }
