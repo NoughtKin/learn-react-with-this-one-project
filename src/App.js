@@ -30,13 +30,15 @@ export default function App() {
       </form>
       <h1>Todo list</h1>
       <ul>
-        <li>
-          <label>
-            <input type="checkbox" />
-            Item 1
-          </label>
-          <button className="btn btn-danger">Delete</button>
-        </li>
+        {todo.map((currentTodo) {
+          <li key={todo.id}>
+            <label>
+              <input type="checkbox" checked={todo.completed} value={todo.title}/>
+              Item 1
+            </label>
+            <button className="btn btn-danger">Delete</button>
+          </li>
+        })}
       </ul>
     </div>
   );
