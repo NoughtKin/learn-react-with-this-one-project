@@ -5,14 +5,8 @@ export function NewItemForm({ onSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-<<<<<<< HEAD
 
     onSubmit(addTodo);
-=======
-    if (item === "") return;
-
-    onSubmit(item);
->>>>>>> d816143ce83a774aed414194d56ff89b74e63907
 
     setItem("");
   }
