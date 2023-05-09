@@ -15,6 +15,14 @@ export default function App() {
     });
   }
 
+  function toggleTodo(currentTodo => {
+    return (currentTodo.map(todo) => {
+      if (todo.id === id) {
+        return [...currentTodo, completed]
+      }
+    })
+  })
+
   return (
     <div>
       <form className="new-item-form" onSubmit={handleSubmit}>
@@ -34,7 +42,11 @@ export default function App() {
           return (
             <li key={todo.id}>
               <label>
-                <input type="checkbox" checked={todo.completed} />
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleTodo(todo.id, todo.completed)}
+                />
                 {todo.title}
               </label>
               <button className="btn btn-danger">Delete</button>
