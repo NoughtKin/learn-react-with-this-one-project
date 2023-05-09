@@ -1,17 +1,13 @@
 import { useState } from "react";
 
-export function NewItemForm() {
+export function NewItemForm({ onSubmit }) {
   const [item, setItem] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
+    if (item === "") return;
 
-    setTodo((currentTodo) => {
-      return [
-        ...currentTodo,
-        { id: crypto.randomUUID(), completed: false, title: item },
-      ];
-    });
+    onSubmit(item);
 
     setItem("");
   }
