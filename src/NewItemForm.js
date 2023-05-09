@@ -6,8 +6,8 @@ export function NewItemForm({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    onSubmit(addTodo);
-    // just a comment
+    onSubmit(item);
+
     setItem("");
   }
 

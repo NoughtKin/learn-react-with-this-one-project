@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { NewItemForm } from "./NewItemForm";
+import { TodoList } from "./TodoList";
 
 export default function App() {
   const [todo, setTodo] = useState([]);
+
+  function addTodo(title) {
+    setTodo((currentTodo) => {
+      return [
+        ...currentTodo,
+        { id: crypto.randomUUID(), completed: false, title },
+      ];
+    });
+  }
 
   function toggleTodo(id, completed) {
     setTodo((currentTodo) => {
@@ -16,15 +26,6 @@ export default function App() {
     });
   }
 
-  function addTodo(title) {
-    setTodo((currentTodo) => {
-      return [
-        ...currentTodo,
-        { id: crypto.randomUUID(), completed: false, title },
-      ];
-    });
-  }
-
   function deleteTodo(id) {
     setTodo((currentTodo) => {
       return currentTodo.filter((todo) => todo.id !== id);
@@ -35,31 +36,7 @@ export default function App() {
     <div>
       <NewItemForm onSubmit={addTodo} />
       <h1>Todo list</h1>
-      <ul>
-        {todo.length === 0 && "No todo list"}
-        {todo.map((todo) => {
-          return (
-            <li key={todo.id}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={(event) =>
-                    toggleTodo(todo.id, event.target.checked)
-                  }
-                />
-                {todo.title}
-              </label>
-              <button
-                className="btn btn-danger"
-                onClick={() => deleteTodo(todo.id)}
-              >
-                Delete
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      <TodoList />
     </div>
   );
 }
