@@ -16,6 +16,15 @@ export default function App() {
     });
   }
 
+  function addTodo(title) {
+    setTodo((currentTodo) => {
+      return [
+        ...currentTodo,
+        { id: crypto.randomUUID(), completed: false, title },
+      ];
+    });
+  }
+
   function deleteTodo(id) {
     setTodo((currentTodo) => {
       return currentTodo.filter((todo) => todo.id !== id);
@@ -23,7 +32,7 @@ export default function App() {
   }
   return (
     <div>
-      <NewItemForm />
+      <NewItemForm onSubmit={addTodo} />
       <h1>Todo list</h1>
       <ul>
         {todo.length === 0 && "No todo list"}
