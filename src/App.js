@@ -15,13 +15,17 @@ export default function App() {
     });
   }
 
-  function toggleTodo(currentTodo => {
-    return (currentTodo.map(todo) => {
-      if (todo.id === id) {
-        return [...currentTodo, completed]
-      }
-    })
-  })
+  function toggleTodo(id, completed) {
+    setTodo((currentTodo) => {
+      return currentTodo.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed };
+        }
+
+        return todo;
+      });
+    });
+  }
 
   return (
     <div>
@@ -45,7 +49,9 @@ export default function App() {
                 <input
                   type="checkbox"
                   checked={todo.completed}
-                  onChange={() => toggleTodo(todo.id, todo.completed)}
+                  onChange={(event) =>
+                    toggleTodo(todo.id, event.target.checked)
+                  }
                 />
                 {todo.title}
               </label>
