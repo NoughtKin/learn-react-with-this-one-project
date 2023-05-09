@@ -27,6 +27,11 @@ export default function App() {
     });
   }
 
+  function deleteTodo(id) {
+    setTodo((currentTodo) => {
+      return currentTodo.filter((todo) => todo.id !== id);
+    });
+  }
   return (
     <div>
       <form className="new-item-form" onSubmit={handleSubmit}>
@@ -55,7 +60,12 @@ export default function App() {
                 />
                 {todo.title}
               </label>
-              <button className="btn btn-danger">Delete</button>
+              <button
+                className="btn btn-danger"
+                onClick={() => deleteTodo(todo.id)}
+              >
+                Delete
+              </button>
             </li>
           );
         })}
