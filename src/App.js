@@ -30,6 +30,7 @@ export default function App() {
       return currentTodo.filter((todo) => todo.id !== id);
     });
   }
+
   return (
     <div>
       <NewItemForm onSubmit={addTodo} />
