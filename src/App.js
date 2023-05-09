@@ -1,16 +1,20 @@
 import { useState } from "react";
 
 export default function App() {
-  const [item, nextItem] = useState("")
-
-  function handleSubmit((event) => {event.target.value})
+  const [item, setItem] = useState("");
 
   return (
     <div>
-      <form className="new-item-form" onSubmit={handleSubmit}>
+      {/* onSubmit={handleSubmit} */}
+      <form className="new-item-form">
         <label htmlFor="item">New item</label>
         <br></br>
-        <input type="text" id="item" ></input>
+        <input
+          type="text"
+          id="item"
+          value={item}
+          onChange={(event) => setItem(event.target.value)}
+        ></input>
         <button className="btn">Add</button>
       </form>
       <h1>Todo list</h1>
