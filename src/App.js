@@ -2,12 +2,23 @@ import { useState } from "react";
 
 export default function App() {
   const [item, setItem] = useState("");
+  const [todo, setTodo] = useState([]);
+
+  const handleSubmit = (event => {
+    event.preventDefault;
+
+    todo = [
+      id: current.playerUUID, completed: false, item: setItem
+  ]
+
+    setTodo[...todo, setTodo]
+  }
 
   return (
     <div>
       {/* onSubmit={handleSubmit} */}
       <form className="new-item-form">
-        <label htmlFor="item">New item</label>
+        <label htmlFor="item" onSubmit={handleSumbit}>New item</label>
         <br></br>
         <input
           type="text"
