@@ -36,7 +36,7 @@ export default function App() {
     <div>
       <NewItemForm addTodo={addTodo} />
       <h1>Todo list</h1>
-      <TodoList />
+      <TodoList todo={todo} />
     </div>
   );
 }
