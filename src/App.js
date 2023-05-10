@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <div>
-      <NewItemForm onSubmit={addTodo} />
+      <NewItemForm addTodo={addTodo} />
       <h1>Todo list</h1>
       <TodoList />
     </div>
